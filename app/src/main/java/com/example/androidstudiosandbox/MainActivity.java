@@ -13,12 +13,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Modify the Text on the TextView
-        /*
-        final TextView helloTextView = (TextView) findViewById(R.id.text_view_id_123);
-        helloTextView.setText("Modified Text");
-        */
     }
 
     /** Called when the activity is about to become visible. */
@@ -33,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(msg, "The onResume() event");
+
+        // Modify the Text on the TextView
+        final TextView helloTextView = findViewById(R.id.text_view_id_223);
+        helloTextView.setText(R.string.app_desc);
     }
 
     /** Called when another activity is taking focus. */
@@ -40,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(msg, "The onPause() event");
+
+        // Modify the Text on the TextView
+        final TextView helloTextView = findViewById(R.id.text_view_id_223);
+        helloTextView.setText(R.string.onPause);
     }
 
     /** Called when the activity is no longer visible. */
