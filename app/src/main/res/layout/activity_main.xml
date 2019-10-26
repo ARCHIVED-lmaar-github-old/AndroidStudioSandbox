@@ -45,15 +45,60 @@
         app:layout_constraintVertical_bias="0.038" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonAccept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accept"
+        android:onClick="toastAccept"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id_223"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_id_103"
         app:layout_constraintVertical_bias="0.055" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAccept" />
+
+    <Button
+        android:id="@+id/buttonStartServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:onClick="startService"
+        android:text="Start Services"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+    <Button
+        android:id="@+id/buttonStopServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonStartServices"
+        android:layout_alignStart="@+id/buttonStartServices"
+        android:layout_alignLeft="@+id/buttonStartServices"
+        android:layout_alignEnd="@+id/buttonStartServices"
+        android:layout_alignRight="@+id/buttonStartServices"
+        android:layout_marginTop="20dp"
+        android:onClick="stopService"
+        android:text="Stop Services"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartServices" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

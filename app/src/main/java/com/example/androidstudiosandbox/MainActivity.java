@@ -1,9 +1,13 @@
 package com.example.androidstudiosandbox;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String msg = "Android : ";
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(msg, "The onStart() event");
+
+        // Toast.makeText(this, "Application Started", Toast.LENGTH_LONG).show();
     }
 
     /** Called when the activity has become visible. */
@@ -56,5 +62,21 @@ public class MainActivity extends AppCompatActivity {
     public void onDestroy() {
         super.onDestroy();
         Log.d(msg, "The onDestroy() event");
+    }
+
+
+    // Service - Start
+    public void startService(View view) {
+        startService(new Intent(getBaseContext(), MyService.class));
+    }
+
+    // Service - Stop
+    public void stopService(View view) {
+        stopService(new Intent(getBaseContext(), MyService.class));
+    }
+
+    // Toast - Accept
+    public void toastAccept(View view){
+        Toast.makeText(this, "Accept Clicked", Toast.LENGTH_LONG).show();
     }
 }
