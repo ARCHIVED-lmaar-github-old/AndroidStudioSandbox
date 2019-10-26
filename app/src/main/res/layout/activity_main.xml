@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/text_view_id_123"
+        android:id="@+id/text_view_id_101"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/text_view_id_222"
+        android:id="@+id/text_view_id_102"
         android:layout_width="264dp"
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
@@ -28,11 +28,11 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id_123"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_id_101"
         app:layout_constraintVertical_bias="0.027" />
 
     <TextView
-        android:id="@+id/text_view_id_223"
+        android:id="@+id/text_view_id_103"
         android:layout_width="340dp"
         android:layout_height="105dp"
         android:text="@string/app_desc"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id_222"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_id_102"
         app:layout_constraintVertical_bias="0.038" />
 
     <Button

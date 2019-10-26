@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg, "The onResume() event");
 
         // Modify the Text on the TextView
-        final TextView helloTextView = findViewById(R.id.text_view_id_223);
+        final TextView helloTextView = findViewById(R.id.text_view_id_102);
         helloTextView.setText(R.string.app_desc);
     }
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg, "The onPause() event");
 
         // Modify the Text on the TextView
-        final TextView helloTextView = findViewById(R.id.text_view_id_223);
+        final TextView helloTextView = findViewById(R.id.text_view_id_102);
         helloTextView.setText(R.string.onPause);
     }
 
