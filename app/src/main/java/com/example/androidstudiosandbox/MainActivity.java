@@ -3,6 +3,7 @@ package com.example.androidstudiosandbox;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -75,8 +76,20 @@ public class MainActivity extends AppCompatActivity {
         stopService(new Intent(getBaseContext(), MyService.class));
     }
 
-    // Toast - Accept
-    public void toastAccept(View view){
+    // onButtonAccept
+    public void onButtonAccept(View view){
+        // Toast
         Toast.makeText(this, "Accept Clicked", Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(android.content.Intent.ACTION_VIEW,
+                // Open Call to 951-030-0000
+                // Uri.parse("tel:9510300000"));
+
+                // Open Browser
+                // Uri.parse("https://www.linkedin.com/in/laurencemaar/"));
+                Uri.parse("http://example.com"));
+
+        startActivity(i);
+
     }
 }
