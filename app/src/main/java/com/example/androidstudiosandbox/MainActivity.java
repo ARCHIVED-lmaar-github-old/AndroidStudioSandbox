@@ -15,8 +15,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Modify the Text on the TextView
+        /*
         final TextView helloTextView = (TextView) findViewById(R.id.text_view_id_123);
         helloTextView.setText("Modified Text");
+        */
     }
 
     /** Called when the activity is about to become visible. */
