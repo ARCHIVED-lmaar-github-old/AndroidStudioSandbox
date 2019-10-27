@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/text_view_id_102"
-        android:layout_width="264dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/app_auth"
         android:textColor="@color/black"
@@ -44,22 +44,8 @@
         app:layout_constraintTop_toBottomOf="@+id/text_view_id_102"
         app:layout_constraintVertical_bias="0.038" />
 
-    <Button
-        android:id="@+id/buttonAccept"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Accept"
-        android:onClick="onButtonAccept"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id_103"
-        app:layout_constraintVertical_bias="0.055" />
-
-
     <ImageView
-        android:id="@+id/imageButton"
+        android:id="@+id/imageAndroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -68,21 +54,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAccept" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_id_103" />
 
     <Button
         android:id="@+id/buttonStartServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/imageAndroid"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="20dp"
         android:onClick="startService"
         android:text="Start Services"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/imageAndroid" />
 
     <Button
         android:id="@+id/buttonStopServices"
@@ -93,12 +79,23 @@
         android:layout_alignLeft="@+id/buttonStartServices"
         android:layout_alignEnd="@+id/buttonStartServices"
         android:layout_alignRight="@+id/buttonStartServices"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="36dp"
         android:onClick="stopService"
+
         android:text="Stop Services"
+        app:layout_constraintStart_toEndOf="@+id/buttonStartServices"
+        app:layout_constraintTop_toTopOf="@+id/buttonStartServices" />
+
+
+    <Switch
+        android:id="@+id/switch101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="onSwitch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStartServices" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonStopServices" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

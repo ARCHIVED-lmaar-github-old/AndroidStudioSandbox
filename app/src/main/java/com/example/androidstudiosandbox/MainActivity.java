@@ -2,25 +2,63 @@ package com.example.androidstudiosandbox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
     String msg = "Android : ";
+    int SwitchState;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Switch Listener
+        Switch myswitch = findViewById(R.id.switch101);
+        myswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // The toggle is enabled
+                    SwitchState = 1;
+
+                    // Modify the Text on the TextView
+                    final TextView helloTextView = findViewById(R.id.text_view_id_103);
+                    helloTextView.setText(R.string.text_on);
+
+                } else {
+                    // The toggle is disabled
+                    SwitchState = 0;
+
+                    // Modify the Text on the TextView
+                    final TextView helloTextView = findViewById(R.id.text_view_id_103);
+                    helloTextView.setText(R.string.text_off);
+
+                    // Toast
+                    //Context context = getApplicationContext();
+                    //Toast.makeText(context, "OFF", Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
+
     }
 
-    /** Called when the activity is about to become visible. */
+    /**
+     * Called when the activity is about to become visible.
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -29,36 +67,44 @@ public class MainActivity extends AppCompatActivity {
         // Toast.makeText(this, "Application Started", Toast.LENGTH_LONG).show();
     }
 
-    /** Called when the activity has become visible. */
+    /**
+     * Called when the activity has become visible.
+     */
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(msg, "The onResume() event");
 
         // Modify the Text on the TextView
-        final TextView helloTextView = findViewById(R.id.text_view_id_102);
+        final TextView helloTextView = findViewById(R.id.text_view_id_103);
         helloTextView.setText(R.string.app_desc);
     }
 
-    /** Called when another activity is taking focus. */
+    /**
+     * Called when another activity is taking focus.
+     */
     @Override
     protected void onPause() {
         super.onPause();
         Log.d(msg, "The onPause() event");
 
         // Modify the Text on the TextView
-        final TextView helloTextView = findViewById(R.id.text_view_id_102);
+        final TextView helloTextView = findViewById(R.id.text_view_id_103);
         helloTextView.setText(R.string.onPause);
     }
 
-    /** Called when the activity is no longer visible. */
+    /**
+     * Called when the activity is no longer visible.
+     */
     @Override
     protected void onStop() {
         super.onStop();
         Log.d(msg, "The onStop() event");
     }
 
-    /** Called just before the activity is destroyed. */
+    /**
+     * Called just before the activity is destroyed.
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -77,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // onButtonAccept
-    public void onButtonAccept(View view){
+    public void onButtonAccept(View view) {
         // Toast
         Toast.makeText(this, "Accept Clicked", Toast.LENGTH_LONG).show();
 
@@ -92,4 +138,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
+    public void onSwitch(final View view) {
+        Toast.makeText(this, "Switch", Toast.LENGTH_SHORT).show();
+    }
+
 }
