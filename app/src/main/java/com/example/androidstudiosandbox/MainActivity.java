@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     /**
      * Called when the activity is about to become visible.
@@ -112,6 +116,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Menu
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
     // Service - Start
     public void startService(View view) {
         startService(new Intent(getBaseContext(), MyService.class));
@@ -139,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // onSwitch
     public void onSwitch(final View view) {
         Toast.makeText(this, "Switch", Toast.LENGTH_SHORT).show();
     }
