@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     String msg = "Android : ";
@@ -126,6 +128,27 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menu_new:
+                Toast.makeText(this, "Menu: New", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_open:
+                Toast.makeText(this, "Menu: Open", Toast.LENGTH_SHORT).show();
+                onLaunchTabbedActivity(findViewById(R.id.menu_open));
+                return true;
+            case R.id.menu_quit:
+                Toast.makeText(this, "Menu: Quit", Toast.LENGTH_SHORT).show();
+                this.finishAffinity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 
     // Service - Start
     public void startService(View view) {
@@ -143,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Accept Clicked", Toast.LENGTH_LONG).show();
 
         Intent i = new Intent(android.content.Intent.ACTION_VIEW,
-                // Open Call to 951-030-0000
+                // Call 951-030-0000
                 // Uri.parse("tel:9510300000"));
 
                 // Open Browser
@@ -157,6 +180,11 @@ public class MainActivity extends AppCompatActivity {
     // onSwitch
     public void onSwitch(final View view) {
         Toast.makeText(this, "Switch", Toast.LENGTH_SHORT).show();
+    }
+
+    // Launch Tabbed Activity
+    public void onLaunchTabbedActivity(View view){
+        startActivity(new Intent(MainActivity.this,TabbedActivity.class));
     }
 
 }

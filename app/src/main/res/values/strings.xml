@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Android Studio Sandbox</string>
+    <string name="app_name2">Android Studio Sandbox - Tabs</string>
     <string name="app_auth">Laurence Maar</string>
     <string name="app_desc">
         This project is an Android Studio Sandbox for prototyping.
@@ -14,8 +15,22 @@
     <string name="text_on">Status: ON</string>
     <string name="text_off">Status: OFF</string>
 
+    <!-- Menu -->
     <string name="menu_file">File</string>
-    <string name="menu_create_new">New</string>
+    <string name="menu_new">New...</string>
     <string name="menu_open">Open...</string>
     <string name="menu_quit">Quit</string>
+
+    <!-- Tabbed Activity -->
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Random Number</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- Fragment 1 -->
+    <string name="random_desc">This fragment generates a random number</string>
+    <string name="random_prompt">Max:</string>
+    <string name="button_random">Generate Random Number</string>
+
+    <!-- Fragment 2 -->
+    <string name="hello_blank_fragment2">Fragment 2</string>
 </resources>
