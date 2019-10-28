@@ -5,7 +5,7 @@
         <!-- Customized Theme -->
         <item name="colorPrimary">@color/salmon</item>
         <item name="colorPrimaryDark">@color/dark_salmon</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/cornflower_blue</item>
 
         <!-- Button Style -->
         <item name="android:buttonStyle">@style/styleButton</item>
@@ -26,15 +26,28 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!-- Progress Bar
-        <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
-    -->
-    <style name="MyProgressBarTwo" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
-        <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
+    <!-- Progress Bar -->
+    <style name="MyHealthBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/custom_bar_health_horizontal</item>
         <item name="colorButtonNormal">#f50057</item>
         <item name="colorControlActivated">#00ff00</item>
         <item name="colorControlHighlight">#ff0000</item>
         <item name="android:minWidth">200dp</item>
     </style>
 
+    <style name="MyShieldBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/custom_bar_shield_horizontal</item>
+        <item name="colorButtonNormal">#f50057</item>
+        <item name="colorControlActivated">#6666ff</item>
+        <item name="colorControlHighlight">#aaaaff</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
+    <style name="MyXPBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/custom_bar_xp</item>
+        <item name="colorButtonNormal">#f50057</item>
+        <item name="colorControlActivated">#ffff00</item>
+        <item name="colorControlHighlight">#000000</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
 </resources>

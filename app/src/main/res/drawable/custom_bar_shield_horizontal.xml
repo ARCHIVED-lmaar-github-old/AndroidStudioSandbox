@@ -4,8 +4,8 @@
         android:gravity="center_vertical|fill_horizontal">
         <shape android:shape="rectangle"
             android:tint="?attr/colorControlNormal">
-            <corners android:radius="8dp"/>
-            <size android:height="30dp" />
+            <corners android:radius="4dp"/>
+            <size android:height="15dp" />
             <solid android:color="#90caf9" />
         </shape>
     </item>
@@ -14,8 +14,8 @@
         <scale android:scaleWidth="100%">
             <shape android:shape="rectangle"
                 android:tint="?attr/colorControlHighlight">
-                <corners android:radius="8dp"/>
-                <size android:height="30dp" />
+                <corners android:radius="2dp"/>
+                <size android:height="10dp" />
                 <solid android:color="#90caf9" />
             </shape>
         </scale>
@@ -25,9 +25,9 @@
         <scale android:scaleWidth="100%">
             <shape android:shape="rectangle"
                 android:tint="?attr/colorControlActivated">
-                <corners android:radius="8dp"/>
-                <size android:height="30dp" />
-                <solid android:color="#b9faca" />
+                <corners android:radius="2dp"/>
+                <size android:height="10dp" />
+                <solid android:color="#6666ff" />
             </shape>
         </scale>
     </item>

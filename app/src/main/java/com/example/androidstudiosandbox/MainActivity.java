@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Modify the Text on the TextView
                     final TextView helloTextView = findViewById(R.id.text_view_id_103);
-                    helloTextView.setText(R.string.text_on);
+                    helloTextView.setText(R.string.app_desc);
 
                 } else {
                     // The toggle is disabled
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Modify the Text on the TextView
                     final TextView helloTextView = findViewById(R.id.text_view_id_103);
-                    helloTextView.setText(R.string.text_off);
+                    helloTextView.setText(R.string.app_desc_off);
 
                     // Toast
                     //Context context = getApplicationContext();
@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
 
     /**
      * Called when the activity is about to become visible.
@@ -179,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
     // onSwitch
     public void onSwitch(final View view) {
-        Toast.makeText(this, "Switch", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Switch Triggered", Toast.LENGTH_SHORT).show();
     }
 
     // Launch Tabbed Activity

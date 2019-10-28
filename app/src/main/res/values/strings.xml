@@ -6,7 +6,9 @@
         This project is an Android Studio Sandbox for prototyping.
         Press the button below to jump to the demo section and then navigate using the tabs.
     </string>
-    <string name="menu_settings">Settings</string>
+    <string name="app_desc_off">
+        The project description has been turned off.
+    </string>    <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="onPause">onPause() Triggered</string>
     <string name="text_on">Status: ON</string>
@@ -20,9 +22,10 @@
 
     <!-- Tabbed Activity -->
     <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="tab_text_1">Random</string>
-    <string name="tab_text_2">Battle</string>
-    <string name="tab_text_3">Blank</string>
+    <string name="tab_text_random">Random</string>
+    <string name="tab_text_battle">Battle</string>
+    <string name="tab_text_services">Srvcs</string>
+    <string name="tab_text_blank">Blank</string>
 
     <!-- Fragment Blank -->
     <string name="hello_blank_fragment">Blank Fragment</string>
@@ -33,5 +36,10 @@
     <string name="button_random">Generate Random Number</string>
 
     <!-- Fragment Battle -->
-    <string name="hello_battle_fragment">Battle!</string>
+    <string name="hello_battle_fragment_v1">Battle!</string>
+
+    <!-- Fragment Battle -->
+    <string name="hello_battle_fragment_v2">Battle! v2</string>
+    <string name="text_enemy">ENEMY</string>
+    <string name="text_player">PLAYER</string>
 </resources>

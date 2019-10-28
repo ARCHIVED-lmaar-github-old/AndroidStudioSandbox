@@ -57,7 +57,6 @@ public class TabbedActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
 

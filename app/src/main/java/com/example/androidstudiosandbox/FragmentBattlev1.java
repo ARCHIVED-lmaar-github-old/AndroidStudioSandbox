@@ -1,8 +1,6 @@
 package com.example.androidstudiosandbox;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,18 +17,18 @@ import java.util.Random;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FragmentBattle.OnFragmentInteractionListener} interface
+ * {@link FragmentBattlev1.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FragmentBattle#newInstance} factory method to
+ * Use the {@link FragmentBattlev1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentBattle extends Fragment {
+public class FragmentBattlev1 extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        final View view = inflater.inflate(R.layout.fragment_battle, container, false);
+        final View view = inflater.inflate(R.layout.fragment_battle_v1, container, false);
 
         // Button Listener
         final Button buttonAttack = view.findViewById(R.id.buttonAttack);
@@ -41,6 +38,7 @@ public class FragmentBattle extends Fragment {
 
 
                 setProgressBar( view,generateRandom(25,5)*-1);
+                //startService(view);
 
                 /*
                 final ProgressBar tv = view.findViewById(R.id.progressBar);
@@ -70,6 +68,7 @@ public class FragmentBattle extends Fragment {
                 // your handler code here
 
                 setProgressBar( view,generateRandom(25,5));
+                //stopService(view);
 
                 /*
                 final ProgressBar tv = view.findViewById(R.id.progressBar);
@@ -86,6 +85,20 @@ public class FragmentBattle extends Fragment {
         return view;
     }
 
+
+    // Service - Start
+    public void startService(View view) {
+        // startService(new Intent(getBaseContext(), MyService.class));
+        getActivity().startService(new Intent(getActivity(), MyService.class));
+    }
+
+    // Service - Stop
+    public void stopService(View view) {
+        // stopService(new Intent(getBaseContext(), MyService.class));
+        getActivity().stopService(new Intent(getActivity(), MyService.class));
+    }
+
+
     int generateRandom(int Max, int Min)
     {
         Random rand = new Random();
@@ -95,7 +108,7 @@ public class FragmentBattle extends Fragment {
 
     public void setProgressBar(View view, final int Progress)
     {
-        final ProgressBar tv = view.findViewById(R.id.progressBar);
+        final ProgressBar tv = view.findViewById(R.id.myHealthBarExample);
         //tv.setProgress(10);
         tv.setSecondaryProgress(tv.getProgress());
         //tv.incrementProgressBy(Progress);

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentBlank">
+
+
+    <!--
+    TITLE
+    -->
+
+
+    <!--
+    BARS
+    -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/hello_battle_fragment_v2"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textEnemy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="@string/text_enemy"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="@+id/myEnemyShields"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/myEnemyShields"
+        style="@style/MyShieldBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="46dp"
+        android:max="20"
+        android:progress="20"
+        android:secondaryProgress="50"
+        android:theme="@style/MyShieldBar"
+        app:layout_constraintBottom_toTopOf="@+id/myEnemyHealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEnemy" />
+
+    <ProgressBar
+        android:id="@+id/myEnemyHealth"
+        style="@style/MyHealthBar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="46dp"
+        android:progress="100"
+        android:secondaryProgress="100"
+        android:theme="@style/MyHealthBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEnemy" />
+
+    <TextView
+        android:id="@+id/textPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="@string/text_player"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/myPlayerShields"
+        app:layout_constraintStart_toStartOf="@+id/myPlayerShields" />
+
+    <ProgressBar
+        android:id="@+id/myPlayerShields"
+        style="@style/MyShieldBar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
+        android:max="100"
+        android:progress="100"
+        android:secondaryProgress="50"
+        android:theme="@style/MyShieldBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/myPlayerHealth"
+        style="@style/MyHealthBar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="31dp"
+        android:progress="200"
+        android:secondaryProgress="200"
+        android:theme="@style/MyHealthBar"
+        app:layout_constraintBottom_toBottomOf="@+id/textPlayerXP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myPlayerShields" />
+
+    <TextView
+        android:id="@+id/textPlayerXP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="2dp"
+        android:text="XP"
+        app:layout_constraintBottom_toTopOf="@+id/myPlayerXP"
+        app:layout_constraintStart_toStartOf="@+id/myPlayerXP" />
+
+
+    <ProgressBar
+        android:id="@+id/myPlayerXP"
+        style="@style/MyXPBar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="83dp"
+        android:progress="0"
+        android:secondaryProgress="100"
+        android:theme="@style/MyXPBar"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAttack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPlayer" />
+
+
+    <!--
+    CONTROLS
+    -->
+    <Button
+        android:id="@+id/buttonHeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginBottom="15dp"
+        android:text="Heal"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+        app:layout_constraintStart_toStartOf="@+id/buttonReset" />
+
+    <Button
+        android:id="@+id/buttonAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="15dp"
+        android:text="Fight"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+        app:layout_constraintEnd_toStartOf="@+id/buttonHeal"
+        app:layout_constraintStart_toStartOf="@+id/textPlayerXP" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:text="Reset"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

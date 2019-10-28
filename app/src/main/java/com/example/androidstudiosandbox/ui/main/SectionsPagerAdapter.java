@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.androidstudiosandbox.FragmentBattle;
+import com.example.androidstudiosandbox.FragmentBattlev1;
+import com.example.androidstudiosandbox.FragmentBattlev2;
+import com.example.androidstudiosandbox.FragmentBlank;
 import com.example.androidstudiosandbox.FragmentRandomNumber;
-import com.example.androidstudiosandbox.BlankFragment;
+import com.example.androidstudiosandbox.FragmentServices;
 import com.example.androidstudiosandbox.R;
 
 /**
@@ -20,7 +22,7 @@ import com.example.androidstudiosandbox.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_random, R.string.tab_text_battle, R.string.tab_text_battle, R.string.tab_text_services, R.string.tab_text_blank};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -38,9 +40,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return new FragmentRandomNumber();
             case 1:
                 //Toast.makeText(mContext, "TAB 2", Toast.LENGTH_SHORT).show();
-                return new FragmentBattle();
+                return new FragmentBattlev1();
+            case 2:
+                //Toast.makeText(mContext, "TAB 2", Toast.LENGTH_SHORT).show();
+                return new FragmentBattlev2();
+            case 3:
+                //Toast.makeText(mContext, "TAB 2", Toast.LENGTH_SHORT).show();
+                return new FragmentServices();
             default:
-                return new BlankFragment();
+                return new FragmentBlank();
 
                 // Return a PlaceholderFragment (defined as a static inner class below).
                 //return PlaceholderFragment.newInstance(position + 1);
@@ -56,6 +64,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show number of tabs.
-        return 3;
+        return 5;
     }
 }
