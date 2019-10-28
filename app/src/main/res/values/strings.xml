@@ -4,10 +4,7 @@
     <string name="app_auth">Laurence Maar</string>
     <string name="app_desc">
         This project is an Android Studio Sandbox for prototyping.
-        This project is an Android Studio Sandbox for prototyping.
-        This project is an Android Studio Sandbox for prototyping.
-        This project is an Android Studio Sandbox for prototyping.
-        This project is an Android Studio Sandbox for prototyping.
+        Press the button below to jump to the demo section and then navigate using the tabs.
     </string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
@@ -23,14 +20,18 @@
 
     <!-- Tabbed Activity -->
     <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="tab_text_1">Random Number</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Random</string>
+    <string name="tab_text_2">Battle</string>
+    <string name="tab_text_3">Blank</string>
 
-    <!-- Fragment 1 -->
+    <!-- Fragment Blank -->
+    <string name="hello_blank_fragment">Blank Fragment</string>
+
+    <!-- Fragment - Random -->
     <string name="random_desc">This fragment generates a random number</string>
     <string name="random_prompt">Max:</string>
     <string name="button_random">Generate Random Number</string>
 
-    <!-- Fragment 2 -->
-    <string name="hello_blank_fragment2">Fragment 2</string>
+    <!-- Fragment Battle -->
+    <string name="hello_battle_fragment">Battle!</string>
 </resources>

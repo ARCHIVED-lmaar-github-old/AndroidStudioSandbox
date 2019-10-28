@@ -26,4 +26,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Progress Bar
+        <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
+    -->
+    <style name="MyProgressBarTwo" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
+        <item name="colorButtonNormal">#f50057</item>
+        <item name="colorControlActivated">#00ff00</item>
+        <item name="colorControlHighlight">#ff0000</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
 </resources>

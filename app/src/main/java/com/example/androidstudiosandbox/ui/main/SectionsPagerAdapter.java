@@ -1,7 +1,6 @@
 package com.example.androidstudiosandbox.ui.main;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -9,8 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.androidstudiosandbox.FragmentBattle;
 import com.example.androidstudiosandbox.FragmentRandomNumber;
-import com.example.androidstudiosandbox.BlankFragment2;
+import com.example.androidstudiosandbox.BlankFragment;
 import com.example.androidstudiosandbox.R;
 
 /**
@@ -20,7 +20,7 @@ import com.example.androidstudiosandbox.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -35,20 +35,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         switch(position) {
             case 0:
                 //Toast.makeText(mContext, "TAB 1", Toast.LENGTH_SHORT).show();
-
-                FragmentRandomNumber bf1 = new FragmentRandomNumber();
-                return bf1;
+                return new FragmentRandomNumber();
+            case 1:
+                //Toast.makeText(mContext, "TAB 2", Toast.LENGTH_SHORT).show();
+                return new FragmentBattle();
+            default:
+                return new BlankFragment();
 
                 // Return a PlaceholderFragment (defined as a static inner class below).
                 //return PlaceholderFragment.newInstance(position + 1);
-            case 1:
-                //Toast.makeText(mContext, "TAB 2", Toast.LENGTH_SHORT).show();
-
-                BlankFragment2 bf2 = new BlankFragment2();
-                return bf2;
-            default:
-                // Return a PlaceholderFragment (defined as a static inner class below).
-                return PlaceholderFragment.newInstance(position + 1);
         }
     }
 
@@ -60,7 +55,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show number of tabs.
+        return 3;
     }
 }
