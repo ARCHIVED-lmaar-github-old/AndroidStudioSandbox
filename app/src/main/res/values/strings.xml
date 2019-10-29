@@ -22,9 +22,9 @@
 
     <!-- Tabbed Activity -->
     <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="tab_text_random">Random</string>
+    <string name="tab_text_random">Rand</string>
     <string name="tab_text_battle">Battle</string>
-    <string name="tab_text_services">Srvcs</string>
+    <string name="tab_text_services">Srvc</string>
     <string name="tab_text_blank">Blank</string>
 
     <!-- Fragment Blank -->

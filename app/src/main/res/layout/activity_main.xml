@@ -34,8 +34,8 @@
 
     <TextView
         android:id="@+id/text_view_id_103"
-        android:layout_width="340dp"
-        android:layout_height="105dp"
+        android:layout_width="341dp"
+        android:layout_height="54dp"
         android:text="@string/app_desc"
         android:textColor="@color/cornflower_blue"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,15 +96,26 @@
         android:id="@+id/switch101"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="27dp"
+        android:checked="true"
         android:onClick="onSwitch"
         android:showText="true"
         android:splitTrack="true"
         android:textOff="OFF"
         android:textOn="ON"
-        android:checked="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="258dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStartDemo" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartDemo"
+        app:srcCompat="@drawable/img_laurence" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

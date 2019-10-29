@@ -59,22 +59,4 @@ public class TabbedActivity extends AppCompatActivity {
 
     }
 
-
-
-    public void onButtonRandomNumber(View view){
-        TextView tv_numberRandomMax = findViewById(R.id.numberRandomMax);
-        TextView tv_numberRandomAnswer = findViewById(R.id.numberRandomAnswer);
-
-        Random rand = new Random();
-
-        Integer numberRandomMax = Integer.valueOf(String.valueOf(tv_numberRandomMax.getText()));
-
-        String strnumberRandomAnswer = String.valueOf(rand.nextInt(numberRandomMax));
-
-        tv_numberRandomAnswer.setText(strnumberRandomAnswer);
-
-        return;
-    }
-
-
 }

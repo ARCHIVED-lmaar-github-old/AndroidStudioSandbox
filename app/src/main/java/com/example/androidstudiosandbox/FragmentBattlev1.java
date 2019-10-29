@@ -67,7 +67,7 @@ public class FragmentBattlev1 extends Fragment {
             public void onClick(View v) {
                 // your handler code here
 
-                setProgressBar( view,generateRandom(25,5));
+                setProgressBar( view,generateRandom(25,15));
                 //stopService(view);
 
                 /*
