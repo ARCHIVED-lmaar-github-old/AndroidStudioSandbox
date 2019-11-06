@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
                 // Uri.parse("tel:9510300000"));
 
                 // Open Browser
-                // Uri.parse("https://www.linkedin.com/in/laurencemaar/"));
                 Uri.parse("http://example.com"));
 
         startActivity(i);
