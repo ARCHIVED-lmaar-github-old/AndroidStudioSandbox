@@ -15,23 +15,13 @@
     <!--
     BARS
     -->
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/hello_battle_fragment_v2"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textEnemy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
         android:text="@string/text_enemy"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="@+id/myEnemyShields"
@@ -72,13 +62,13 @@
 
     <TextView
         android:id="@+id/textPlayer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
+        android:layout_marginTop="25dp"
         android:text="@string/text_player"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/myPlayerShields"
-        app:layout_constraintStart_toStartOf="@+id/myPlayerShields" />
+        app:layout_constraintStart_toStartOf="@+id/myPlayerShields"
+        app:layout_constraintTop_toBottomOf="@+id/myEnemyHealth" />
 
     <ProgressBar
         android:id="@+id/myPlayerShields"
@@ -91,10 +81,9 @@
         android:progress="100"
         android:secondaryProgress="100"
         android:theme="@style/MyShieldBar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textPlayer" />
 
     <ProgressBar
         android:id="@+id/myPlayerHealth"
@@ -102,27 +91,23 @@
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_marginStart="46dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="31dp"
         android:max="200"
         android:progress="200"
         android:secondaryProgress="200"
         android:theme="@style/MyHealthBar"
-        app:layout_constraintBottom_toBottomOf="@+id/textPlayerXP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/myPlayerShields" />
+        app:layout_constraintTop_toBottomOf="@+id/myPlayerShields" />
 
     <TextView
         android:id="@+id/textPlayerXP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="2dp"
         android:text="XP"
-        app:layout_constraintBottom_toTopOf="@+id/myPlayerXP"
-        app:layout_constraintStart_toStartOf="@+id/myPlayerXP" />
+        app:layout_constraintStart_toStartOf="@+id/myPlayerHealth"
+        app:layout_constraintTop_toBottomOf="@+id/myPlayerHealth" />
 
 
     <ProgressBar
@@ -131,16 +116,13 @@
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_marginStart="46dp"
-        android:layout_marginTop="83dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="83dp"
         android:progress="0"
         android:secondaryProgress="100"
         android:theme="@style/MyXPBar"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAttack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPlayer" />
+        app:layout_constraintTop_toBottomOf="@+id/textPlayerXP" />
 
 
     <!--
@@ -161,14 +143,12 @@
         android:id="@+id/buttonAttack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="15dp"
         android:text="Fight"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonReset"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHeal"
-        app:layout_constraintStart_toStartOf="@+id/textPlayerXP" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonHeal" />
 
     <Button
         android:id="@+id/buttonReset"

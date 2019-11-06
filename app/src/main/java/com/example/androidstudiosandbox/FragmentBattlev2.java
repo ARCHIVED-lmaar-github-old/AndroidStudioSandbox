@@ -1,3 +1,16 @@
+/*
+ * Android Studio Demo
+ * -----
+ * This is demo shows basic Android functionality such as having multiple Activities and
+ * a Tabbed Activity composed of multiple fragments.
+ * Each fragment has some kind of unique functionality.
+ * -----
+ * Laurence Maar
+ * https://www.linkedin.com/in/laurencemaar/
+ * https://github.com/laurencemaar/
+ * laurencemaar@gmail.com
+ */
+
 package com.example.androidstudiosandbox;
 
 import android.content.Intent;
@@ -34,7 +47,11 @@ import java.util.Random;
 public class FragmentBattlev2 extends Fragment {
 
     int EnemyNumber = 1;
-    String[] EnemyName = {"Cheese", "Bob", "Jennifer", "Ray", "Charles", "Lolo", "Mike", "Papa", "Mama", "Jessica", "Parker"};
+    int EnemyNameCount = 15;
+    String[] EnemyName = {"Cheese", "Bob", "Jennifer", "Ray", "Charles", "Lolo", "Mike", "Papa", "Mama", "Jessica", "Parker", "Joe", "Sammie", "Jean", "Kayla"};
+
+    int PlayerXP = 0;
+    int PlayerLevel = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -47,7 +64,7 @@ public class FragmentBattlev2 extends Fragment {
             public void onClick(View v) {
                 // your handler code here
                 gameAttack( view,generateRandom(30,10)*-1, R.id.myEnemyHealth, R.id.myEnemyShields);
-                gameAttack( view,generateRandom(6,2)*-1, R.id.myPlayerHealth, R.id.myPlayerShields);
+                gameAttack( view,generateRandom(13,4)*-1, R.id.myPlayerHealth, R.id.myPlayerShields);
 
             }
         });
@@ -57,7 +74,7 @@ public class FragmentBattlev2 extends Fragment {
         buttonHeal.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // your handler code here
-                gameHeal( view,generateRandom(25,5), R.id.myPlayerHealth, R.id.myPlayerShields);
+                gameHeal( view,generateRandom(50,65), R.id.myPlayerHealth, R.id.myPlayerShields);
 
             }
         });
@@ -130,14 +147,18 @@ public class FragmentBattlev2 extends Fragment {
         eShieldBar.setSecondaryProgress(eShieldBar.getMax());
 
         // XP
+        PlayerXP = 0;
         final TextView helloTextView = view.findViewById(R.id.textPlayerXP);
-        final ProgressBar PlayerXP = view.findViewById(R.id.myPlayerXP);
-        PlayerXP.setProgress(0);
-        helloTextView.setText(String.format("XP: %d / %d", 0, PlayerXP.getMax()));
+        final ProgressBar pbPlayerXP = view.findViewById(R.id.myPlayerXP);
+        pbPlayerXP.setProgress(PlayerXP);
+        helloTextView.setText(String.format("XP: %d / %d", 0, pbPlayerXP.getMax()));
 
         // Set Enemy Name
         EnemyNumber=1;
         setEnemyName(view);
+
+        // Set Player Name
+        setPlayerName(view);
 
         // Toast
         //Toast.makeText(getActivity(), "Reset", Toast.LENGTH_LONG).show();
@@ -157,16 +178,18 @@ public class FragmentBattlev2 extends Fragment {
         if(HealthBar.getProgress() < 5)
         {
             // Give XP
-            final ProgressBar PlayerXP = view.findViewById(R.id.myPlayerXP);
+            final ProgressBar pbPlayerXP = view.findViewById(R.id.myPlayerXP);
             int XP_Earned = generateRandom(25,10);
-            PlayerXP.incrementProgressBy(XP_Earned);
+            PlayerXP += XP_Earned;
+            pbPlayerXP.setProgress(PlayerXP % pbPlayerXP.getMax());
 
             // Update XP
             final TextView helloTextView = view.findViewById(R.id.textPlayerXP);
-            helloTextView.setText(String.format("XP: %d / %d", PlayerXP.getProgress(), PlayerXP.getMax()));
+            helloTextView.setText(String.format("XP: %d / %d", PlayerXP, pbPlayerXP.getMax()));
 
             // Pop-up
-            if(PlayerXP.getProgress() >= PlayerXP.getMax())
+            /*
+            if(pbPlayerXP.getProgress() >= pbPlayerXP.getMax())
             {
                 popup_win();
             }
@@ -174,6 +197,7 @@ public class FragmentBattlev2 extends Fragment {
             {
                 popup_xp(String.format("Enemy Defeated!\nXP Earned: %d", XP_Earned));
             }
+            */
 
             // Reset Enemy
             HealthBar.setProgress(HealthBar.getMax());
@@ -186,15 +210,47 @@ public class FragmentBattlev2 extends Fragment {
 
             // Set Enemy Name
             setEnemyName(view);
+
+            // Set Player Name
+            setPlayerName(view);
         }
 
     }
+
+
+    public void gameCheckPlayerHealth(View view) {
+        final ProgressBar HealthBar = view.findViewById(R.id.myPlayerHealth);
+        final ProgressBar ShieldBar = view.findViewById(R.id.myPlayerShields);
+
+        if(HealthBar.getProgress() < 5)
+        {
+            // Lose XP
+            //PlayerXP -= 15;
+
+            // Reset
+            HealthBar.setProgress(HealthBar.getMax());
+            HealthBar.setSecondaryProgress(HealthBar.getMax());
+            ShieldBar.setProgress(ShieldBar.getMax());
+            ShieldBar.setSecondaryProgress(ShieldBar.getMax());
+        }
+
+    }
+
 
     public void setEnemyName(View view)
     {
         // Set Enemy Name
         final TextView tvEnemyName = view.findViewById(R.id.textEnemy);
-        tvEnemyName.setText(Html.fromHtml(String.format("ENEMY <font color='#ff0000'>%d</font>: <font color='#3333ff'>%s</font>", EnemyNumber, EnemyName[EnemyNumber%11])));
+        tvEnemyName.setText(Html.fromHtml(String.format("ENEMY <font color='#ff0000'>%d</font>: <font color='#3333ff'>%s</font>", EnemyNumber, EnemyName[EnemyNumber%EnemyNameCount])));
+    }
+
+
+    public void setPlayerName(View view)
+    {
+        // Set Enemy Name
+        final TextView tvPlayerName = view.findViewById(R.id.textPlayer);
+        PlayerLevel = PlayerXP/100 + 1;
+        tvPlayerName.setText(Html.fromHtml(String.format("PLAYER <font color='#0000ff'>(Level %d)</font>", PlayerLevel)));
     }
 
 
@@ -333,6 +389,7 @@ public class FragmentBattlev2 extends Fragment {
                     public void run() {
                         // Do something after delay
                         gameCheckEnemyHealth(view);
+                        gameCheckPlayerHealth(view);
                     }
                 }, 10*Amount*-1+5*Amount*-1+150);
             }

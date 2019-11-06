@@ -111,11 +111,23 @@
         android:id="@+id/imageView"
         android:layout_width="258dp"
         android:layout_height="264dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonStartDemo"
         app:srcCompat="@drawable/img_laurence" />
+
+    <!--
+    <ImageView
+        android:id="@+id/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/drupal48"
+        tools:layout_editor_absoluteY="345dp" />
+        -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

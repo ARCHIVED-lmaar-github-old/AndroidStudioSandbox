@@ -1,3 +1,16 @@
+/*
+ * Android Studio Demo
+ * -----
+ * This is demo shows basic Android functionality such as having multiple Activities and
+ * a Tabbed Activity composed of multiple fragments.
+ * Each fragment has some kind of unique functionality.
+ * -----
+ * Laurence Maar
+ * https://www.linkedin.com/in/laurencemaar/
+ * https://github.com/laurencemaar/
+ * laurencemaar@gmail.com
+ */
+
 package com.example.androidstudiosandbox;
 
 import android.net.Uri;

@@ -1,7 +1,24 @@
+/*
+ * Android Studio Demo
+ * -----
+ * This is demo shows basic Android functionality such as having multiple Activities and
+ * a Tabbed Activity composed of multiple fragments.
+ * Each fragment has some kind of unique functionality.
+ * -----
+ * Laurence Maar
+ * https://www.linkedin.com/in/laurencemaar/
+ * https://github.com/laurencemaar/
+ * laurencemaar@gmail.com
+ */
+
 package com.example.androidstudiosandbox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +29,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +75,31 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        /*
+        AnimatorSet sunAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.sun_movement);
+        ImageView sun = (ImageView) findViewById(R.id.sun);
+        sunAnimatorSet.setTarget(sun);
+
+        sunAnimatorSet.addListener(
+
+                new AnimatorListenerAdapter() {
+
+                    public void onAnimationStart(Animator animation) {
+                        Toast.makeText(getApplicationContext(), "Animation started!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    public void onAnimationEnd(Animator animation) {
+                        Toast.makeText(getApplicationContext(), "Animation ended!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                });
+
+        sunAnimatorSet.start();
+        */
 
     }
 
